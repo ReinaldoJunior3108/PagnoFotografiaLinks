@@ -29,8 +29,9 @@ body {
   background-size: cover; */
 
   /*background: color image repeat position/size ;*/
-  background: #000000 var(--bg-url) no-repeat center/cover;
+  background: #000000 var(--bg-url) top center/cover;
   height: 100%;
+  transition: background 0.7s ease;
   overflow: hidden;
 }
 body * {
