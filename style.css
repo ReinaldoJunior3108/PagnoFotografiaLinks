@@ -31,6 +31,7 @@ body {
   /*background: color image repeat position/size ;*/
   background: #000000 var(--bg-url) no-repeat center/cover;
   height: 100%;
+  overflow: hidden;
 }
 body * {
   font-family: "Inter", sans-serif;
