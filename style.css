@@ -3,6 +3,24 @@
   margin: 0;
   box-sizing: border-box;
 }
+:root {
+  --text-color: #ffffff;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --social-hover: rgba(255, 255, 255, 0.2);
+  --bg-url-switch: url(./assets/moon-stars.svg);
+}
+.light {
+  --text-color: #000000;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --social-hover: rgba(0, 0, 0, 0.2);
+  --bg-url-switch: url(./assets/sun.svg);
+}
 
 body {
   /*background-image: url(./assets/bg-mobile.jpg);
@@ -11,11 +29,11 @@ body {
   background-size: cover; */
 
   /*background: color image repeat position/size ;*/
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--bg-url) top center/cover;
 }
 body * {
   font-family: "Inter", sans-serif;
-  color: #fff;
+  color: var(--text-color);
 }
 .container {
   width: 360px;
@@ -47,6 +65,40 @@ body * {
   font-weight: 500;
   line-height: 24px;
 }
+/* switch */
+.switch {
+  width: 64px;
+
+  position: relative;
+  margin: 4px auto;
+  animation: position 2s ease;
+}
+.switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--bg-url-switch) no-repeat center;
+  border-radius: 50%;
+  border: 0;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.7s ease;
+}
+.light .switch button {
+  transform: translateX(100%) translateY(-50%);
+}
+.switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
 /*links */
 ul {
   list-style: none;
@@ -61,9 +113,9 @@ ul li a {
   justify-content: center;
   align-items: center;
   padding: 16px 24px;
-
+  background: var(--surface-color);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--stroke-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   text-decoration: none;
@@ -86,8 +138,8 @@ ul li a {
   }
 }
 ul li a:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid white;
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
 }
 .social-icons {
   font-size: 24px;
@@ -106,6 +158,6 @@ ul li a:hover {
   transition: background 0.2s ease;
 }
 .social-icons a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--social-hover);
   border-radius: 50%;
 }
