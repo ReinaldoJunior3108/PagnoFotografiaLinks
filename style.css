@@ -29,7 +29,7 @@ body {
   background-size: cover; */
 
   /*background: color image repeat position/size ;*/
-  background: #000000 var(--bg-url) top center/cover;
+  background: #000000 var(--bg-url) repeat top center/cover;
   height: 100%;
 }
 body * {
